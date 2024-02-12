@@ -1,0 +1,10 @@
+export { default as SectionTitle } from './SectionTitle/SectionTitle';
+export { default as Section } from './Section/Section';
+export { default as Container } from './Container/Container';
+export { default as Button } from './Button/Button';
+export { default as ButtonClose } from './ButtonClose/ButtonClose';
+export { default as Subtitle } from './Subtitle/Subtitle';
+export { default as Slider } from './Slider/Slider';
+export { default as Logo } from './Logo/Logo';
+export { default as ButtonScrollToUp } from './ButtonScrollToUp/ButtonScrollToUp';
+export { default as ButtonAppointment } from './ButtonAppointment/ButtonAppointment';
