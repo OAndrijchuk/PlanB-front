@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { ReactNode } from 'react';
+import { twMerge } from 'tailwind-merge';
 
-const SectionTitle = () => {
+type SectionTitleProps = {
+  children: ReactNode;
+  className?: string;
+};
+
+const SectionTitle = ({ children, className }: SectionTitleProps) => {
   return (
-    <div>SelectionTitle</div>
-  )
-}
+    <h1
+      className={twMerge(
+        `text-stone-50 text-7xl font-normal font-caveat400 leading-[72px]`,
+        className
+      )}
+    >
+      {children}
+    </h1>
+  );
+};
 
-export default SectionTitle
+export default SectionTitle;

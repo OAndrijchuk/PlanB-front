@@ -10,12 +10,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        pink: '#FACFC2',
-        dark: '#202020',
-        darkText: '#1D1C1C',
-        gray: '#A5A1A1',
-        light: '#FFF9F7',
-        error: '#C22B2B',
+        red: {
+          200: '#FACFC2',
+          700: '#C22B2B',
+        },
+        neutral: {
+          800: '#202020',
+          400: '#A5A1A1',
+        },
+        stone: {
+          50: '#FFF9F7',
+          200: '#E4DFDE',
+          400: '#A99088',
+          900: '#1D1C1C',
+        },
         white: '#FFFFFF',
       },
       fontFamily: {

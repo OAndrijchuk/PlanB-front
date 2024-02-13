@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { ReactNode } from 'react';
+import { twMerge } from 'tailwind-merge';
 
-const Section = () => {
+type SectionProps = {
+  children: ReactNode;
+  className?: string;
+};
+
+const Section = ({ children, className }: SectionProps) => {
   return (
-    <div>Section</div>
-  )
-}
+    <section className={twMerge(`pt-[120px] xl:pt-[144px]`, className)}>
+      {children}
+    </section>
+  );
+};
 
-export default Section
+export default Section;
