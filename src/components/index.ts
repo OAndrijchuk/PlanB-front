@@ -8,3 +8,4 @@ export { default as Slider } from './Slider/Slider';
 export { default as Logo } from './Logo/Logo';
 export { default as ButtonScrollToUp } from './ButtonScrollToUp/ButtonScrollToUp';
 export { default as ButtonAppointment } from './ButtonAppointment/ButtonAppointment';
+export { default as Modal } from './Modal/Modal';

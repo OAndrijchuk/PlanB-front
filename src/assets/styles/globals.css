@@ -93,3 +93,11 @@ body {
   font-weight: 500;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'TTChocolates-400';
+  src: url('../fonts/TTChocolatesTrl/TT-Chocolates-Trial-Regular-400.otf')
+    format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
