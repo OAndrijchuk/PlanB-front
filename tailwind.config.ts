@@ -30,6 +30,7 @@ const config: Config = {
         caveat400: 'Caveat-400',
         ttChocolates700: 'TTChocolates-700',
         ttChocolates500: 'TTChocolates-500',
+        ttChocolates400: 'TTChocolates-400',
       },
       screens: {
         sm: '320px',

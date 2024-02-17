@@ -1,7 +1,7 @@
 import { twMerge } from 'tailwind-merge';
 
 export default function Home() {
-  const classes = 'bg-pink';
+  const classes = 'bg-violet-700';
   return (
     <main
       className={twMerge(
