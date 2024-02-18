@@ -1,7 +1,9 @@
+import { Team } from '@/modules';
+import { Card } from '@/modules/Team/components';
 import { twMerge } from 'tailwind-merge';
 
 export default function Home() {
-  const classes = 'bg-pink';
+  const classes = 'bg-stone-900';
   return (
     <main
       className={twMerge(
@@ -10,6 +12,7 @@ export default function Home() {
       )}
     >
       <h1>PlanB</h1>
+      <Team />
     </main>
   );
 }
