@@ -1,5 +1,10 @@
-import { Price } from '@/modules';
+import { Hero, Price } from '@/modules';
 
 export default function Home() {
-  return <Price />;
+  return (
+    <>
+      <Hero />
+      <Price />
+    </>
+  );
 }
