@@ -21,7 +21,7 @@ const Hero = () => {
           Лазерна та електро епіляція
         </h1>
         <p
-          className="mb-[8.5rem] leading-5
+          className="mb-[8.5rem] leading-5 
         md:mb-[7.38rem] md:max-w-[26rem] md:text-[1.75rem] md:leading-8
         xl:mb-[10.5rem]"
         >
