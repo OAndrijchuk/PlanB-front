@@ -11,7 +11,9 @@ const config: Config = {
     extend: {
       colors: {
         red: {
+          100: '#ECC2B6',
           200: '#FACFC2',
+          300: '#F6B7A4',
           700: '#C22B2B',
         },
         neutral: {
@@ -40,8 +42,18 @@ const config: Config = {
         '2xl': '-1px',
       },
       borderRadius: {
-        default: '12px',
+        custom: '12px',
       },
+      boxShadow: {
+        custom:
+          '1px 7px 16px 0px rgba(42, 40, 40, 0.10), 2px 29px 29px 0px rgba(42, 40, 40, 0.09), 5px 66px 40px 0px rgba(42, 40, 40, 0.05), 10px 117px 47px 0px rgba(42, 40, 40, 0.01), 15px 183px 51px 0px rgba(42, 40, 40, 0.00);',
+      },
+      backgroundImage: theme => ({
+        'hero-mobile':
+          "linear-gradient(rgba(0, 0, 0, 0.2) 0px -191.875px), url('/hero_mob.jpg')",
+        'hero-tablet': "url('/hero_tab.jpg')",
+        'hero-desktop': " url('/hero_desk.jpg')",
+      }),
     },
   },
   plugins: [],

@@ -1,3 +1,5 @@
+'use client';
+
 import { SpriteSVG } from '@/assets/img/SpriteSVG';
 import { createPortal } from 'react-dom';
 import React, { useEffect, ReactNode } from 'react';
