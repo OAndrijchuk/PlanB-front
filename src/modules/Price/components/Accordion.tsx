@@ -36,29 +36,29 @@ export default function Accordion() {
             </div>
 
             {/* absolute -left-[8px] bottom-0 */}
-            <ul className="flex gap-[23px]">
+            {/* <div className="flex gap-[23px]">
               {isMobileScreen &&
                 [...Array(7)].map((_, index) => (
-                  <li
+                  <div
                     key={index}
                     className="w-[24px] h-[1px] bg-stone-900"
-                  ></li>
+                  ></div>
                 ))}
               {isTabletScreen &&
                 [...Array(16)].map((_, index) => (
-                  <li
+                  <div
                     key={index}
                     className="w-[24px] h-[1px] bg-stone-900"
-                  ></li>
+                  ></div>
                 ))}
               {isDesktopScreen &&
                 [...Array(25)].map((_, index) => (
-                  <li
+                  <div
                     key={index}
                     className="w-[24px] h-[1px] bg-stone-900"
-                  ></li>
+                  ></div>
                 ))}
-            </ul>
+            </div> */}
 
             <div
               className={`absolute left-0 bottom-0
