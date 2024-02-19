@@ -1,3 +1,4 @@
+import { Price } from '@/modules';
 import { twMerge } from 'tailwind-merge';
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       )}
     >
       <h1>PlanB</h1>
+      <Price />
     </main>
   );
 }

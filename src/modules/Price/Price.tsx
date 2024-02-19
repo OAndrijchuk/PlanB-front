@@ -1,9 +1,13 @@
-import React from 'react'
+import { Container, Section, SectionTitle } from '@/components';
+import { Accordion } from './components';
 
-const Price = () => {
+export default function Price() {
   return (
-    <div>Price</div>
-  )
+    <Section className="bg-image w-full py-[120px]">
+      <Container>
+        <SectionTitle className="mb-20 text-stone-900">Ціни</SectionTitle>
+        <Accordion />
+      </Container>
+    </Section>
+  );
 }
-
-export default Price
