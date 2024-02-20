@@ -1,19 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 
 import accordionHeaderData from '../data/accordion-header-data';
 import IconPlus from './IconPlus';
+import useMediaQueries from '../../../hooks/useMediaQueries';
 
 export default function Accordion() {
   const [activeTab, setActiveTab] = useState<number | null>(null);
 
-  const isMobileScreen = useMediaQuery({ query: '(max-width: 767.9px)' });
-  const isTabletScreen = useMediaQuery({
-    query: '(min-width: 768px) and (max-width: 1439.9px)',
-  });
-  const isDesktopScreen = useMediaQuery({ query: '(min-width: 1440px)' });
+  const { isOnMobile, isOnTablet, isOnDesktop } = useMediaQueries();
 
   const handleTabClick = (index: number) => {
     setActiveTab(activeTab === index ? null : index);
@@ -36,29 +32,29 @@ export default function Accordion() {
             </div>
 
             {/* absolute -left-[8px] bottom-0 */}
-            {/* <div className="flex gap-[23px]">
-              {isMobileScreen &&
+            <div className="flex gap-[23px]">
+              {isOnMobile &&
                 [...Array(7)].map((_, index) => (
                   <div
                     key={index}
                     className="w-[24px] h-[1px] bg-stone-900"
                   ></div>
                 ))}
-              {isTabletScreen &&
+              {isOnTablet &&
                 [...Array(16)].map((_, index) => (
                   <div
                     key={index}
                     className="w-[24px] h-[1px] bg-stone-900"
                   ></div>
                 ))}
-              {isDesktopScreen &&
+              {isOnDesktop &&
                 [...Array(25)].map((_, index) => (
                   <div
                     key={index}
                     className="w-[24px] h-[1px] bg-stone-900"
                   ></div>
                 ))}
-            </div> */}
+            </div>
 
             <div
               className={`absolute left-0 bottom-0
