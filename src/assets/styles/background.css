@@ -1,0 +1,66 @@
+.bg-price {
+  background-image: linear-gradient(
+      rgba(255, 249, 247, 0.7),
+      rgba(255, 249, 247, 0.7)
+    ),
+    url('../../modules/Price/img/price_bg320@1x.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+  .bg-price {
+    background-image: linear-gradient(
+        rgba(255, 249, 247, 0.7),
+        rgba(255, 249, 247, 0.7)
+      ),
+      url('../../modules/Price/img/price_bg320@2x.jpg');
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .bg-price {
+    background-image: linear-gradient(
+        rgba(255, 249, 247, 0.7),
+        rgba(255, 249, 247, 0.7)
+      ),
+      url('../../modules/Price/img/price_bg768@1x.jpg');
+  }
+
+  @media only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    .bg-price {
+      background-image: linear-gradient(
+          rgba(255, 249, 247, 0.7),
+          rgba(255, 249, 247, 0.7)
+        ),
+        url('../../modules/Price/img/price_bg768@2x.jpg');
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .bg-price {
+    background-image: linear-gradient(
+        rgba(255, 249, 247, 0.7),
+        rgba(255, 249, 247, 0.7)
+      ),
+      url('../../modules/Price/img/price_bg1440@1x.jpg');
+  }
+
+  @media only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    .bg-price {
+      background-image: linear-gradient(
+          rgba(255, 249, 247, 0.7),
+          rgba(255, 249, 247, 0.7)
+        ),
+        url('../../modules/Price/img/price_bg1440@2x.jpg');
+    }
+  }
+}

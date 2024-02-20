@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './background';
 
 html {
   box-sizing: border-box;
@@ -63,7 +64,7 @@ select {
 }
 
 body {
-  font-family: TTChocolates-500, sans-serif;
+  font-family: TTChocolates-400, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;

@@ -14,8 +14,10 @@ export default function RootLayout({
   return (
     <html lang="ua">
       <body>
-        {children}
-        <div id="modal-root"></div>
+        <main>
+          {children}
+          <div id="modal-root"></div>
+        </main>
       </body>
     </html>
   );

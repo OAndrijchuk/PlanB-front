@@ -1,11 +1,10 @@
-import { Hero } from '@/modules';
-import { twMerge } from 'tailwind-merge';
+import { Hero, Price } from '@/modules';
 
 export default function Home() {
-  const classes = '';
   return (
-    <main className={twMerge('', classes)}>
+    <>
       <Hero />
-    </main>
+      <Price />
+    </>
   );
 }
