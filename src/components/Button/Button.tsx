@@ -9,6 +9,12 @@ const Button = () => {
     const toggleVisibility = () => {
       window.scrollY > 500 ? setIsVisible(true) : setIsVisible(false);
     };
+
+    window.addEventListener('scroll', toggleVisibility);
+
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility);
+    };
   }, []);
 
   return (
