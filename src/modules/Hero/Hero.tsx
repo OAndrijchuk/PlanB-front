@@ -5,13 +5,9 @@ const Hero = () => {
   return (
     <Section
       id="hero"
-      className="pt-36 pb-6 text-stone-900 bg-hero-mobile 
-      md:pt-[294px] md:pb-[198px] md:bg-hero-tablet
-      xl:pt-32 xl:pb-28 xl:bg-hero-desktop "
-      style={{
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
+      className="bg-hero pt-36 pb-6  text-stone-900  
+      md:pt-[294px] md:pb-[198px]
+      xl:pt-32 xl:pb-28"
     >
       <Container className="">
         <h1
