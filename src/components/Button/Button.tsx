@@ -1,9 +1,10 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
-const Button = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+const Button: React.FC = () => {
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -21,10 +22,10 @@ const Button = () => {
     <button
       onClick={() => setShowModal(true)}
       type="button"
-      className={`fixed right-4 bottom-10 w-[80px] h-[78px] text-black text-base font-medium leading-none bg-red-200 rounded-full cursor-pointer hover:bg-red-100 active:bg-red-300
+      className={twMerge(`fixed right-4 bottom-10 w-[80px] h-[78px] text-black text-base font-medium leading-none bg-red-200 rounded-full cursor-pointer hover:bg-red-100 active:bg-red-300
       md:right-8
-      ${isVisible ? 'opacity-100' : 'opacity-0'}
-      `}
+      ${isVisible ? 'visible' : 'hidden'}
+      `)}
     >
       Онлайн запис
     </button>
