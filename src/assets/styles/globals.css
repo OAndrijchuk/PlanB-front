@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './background';
 
 html {
   box-sizing: border-box;
@@ -63,7 +64,7 @@ select {
 }
 
 body {
-  font-family: TTChocolates-500, sans-serif;
+  font-family: TTChocolates-400, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -91,5 +92,13 @@ body {
   src: url('../fonts/TTChocolatesTrl/TT-Chocolates-Trial-Medium-500.otf')
     format('truetype');
   font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTChocolates-400';
+  src: url('../fonts/TTChocolatesTrl/TT-Chocolates-Trial-Regular-400.otf')
+    format('truetype');
+  font-weight: 400;
   font-style: normal;
 }

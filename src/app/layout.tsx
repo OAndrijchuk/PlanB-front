@@ -13,7 +13,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ua">
-      <body>{children}</body>
+      <body>
+        <main>
+          {children}
+          <div id="modal-root"></div>
+        </main>
+      </body>
     </html>
   );
 }

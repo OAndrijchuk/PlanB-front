@@ -1,0 +1,103 @@
+.bg-price {
+  background-image: linear-gradient(
+      rgba(255, 249, 247, 0.7),
+      rgba(255, 249, 247, 0.7)
+    ),
+    url('../../modules/Price/img/price_bg320@1x.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+  .bg-price {
+    background-image: linear-gradient(
+        rgba(255, 249, 247, 0.7),
+        rgba(255, 249, 247, 0.7)
+      ),
+      url('../../modules/Price/img/price_bg320@2x.jpg');
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .bg-price {
+    background-image: linear-gradient(
+        rgba(255, 249, 247, 0.7),
+        rgba(255, 249, 247, 0.7)
+      ),
+      url('../../modules/Price/img/price_bg768@1x.jpg');
+  }
+
+  @media only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    .bg-price {
+      background-image: linear-gradient(
+          rgba(255, 249, 247, 0.7),
+          rgba(255, 249, 247, 0.7)
+        ),
+        url('../../modules/Price/img/price_bg768@2x.jpg');
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .bg-price {
+    background-image: linear-gradient(
+        rgba(255, 249, 247, 0.7),
+        rgba(255, 249, 247, 0.7)
+      ),
+      url('../../modules/Price/img/price_bg1440@1x.jpg');
+  }
+
+  @media only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    .bg-price {
+      background-image: linear-gradient(
+          rgba(255, 249, 247, 0.7),
+          rgba(255, 249, 247, 0.7)
+        ),
+        url('../../modules/Price/img/price_bg1440@2x.jpg');
+    }
+  }
+}
+
+/* Bg-Hero */
+
+.bg-hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url('../../modules/Hero/assets/hero_mob.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url('../../modules/Hero/assets/hero_mob@2x.jpg');
+  }
+
+  @media only screen and (min-width: 768px) {
+    background-image: url('../../modules/Hero/assets/hero_tab.jpg');
+
+    @media only screen and (min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+      background-image: url('../../modules/Hero/assets/hero_tab@2x.jpg');
+    }
+  }
+
+  @media only screen and (min-width: 1440px) {
+    background-image: url('../../modules/Hero/assets/hero_desk.jpg');
+
+    @media only screen and (min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+      background-image: url('../../modules/Hero/assets/hero_desk@2x.jpg');
+    }
+  }
+}
