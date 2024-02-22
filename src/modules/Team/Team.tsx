@@ -13,15 +13,19 @@ export const getStaticProps = async () => {
   return { props: { contacts: data } };
 };
 
-console.log('=====GETStaticProp', getStaticProps());
-
 const Team = () => {
   const classes = '';
   return (
-    <div className="p-0 m-0 w-[288px]">
-      <h1 className="text-5xl font-caveat400 text-[56px]">Наші спеціалісти</h1>
+    <div className="p-0 m-0">
+      <h1 className="text-5xl font-caveat400 text-[56px] md: text-[72px]">
+        Наші спеціалісти
+      </h1>
 
-      <ul className="flex items-center flex-col gap-3 mt-[72px]">
+      <ul
+        className="flex items-center flex-col gap-2 mt-[72px] 
+      md:flex-row gap-1
+      xl:flex-row"
+      >
         {masters.map((master: Master) => (
           <Card master={master} key={master.name} />
         ))}
