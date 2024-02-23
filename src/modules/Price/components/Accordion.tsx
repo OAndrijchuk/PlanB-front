@@ -1,75 +1,69 @@
 'use client';
 
 import { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
+import useMediaQueries from '../../../hooks/useMediaQueries';
 
 import accordionHeaderData from '../data/accordion-header-data';
-import IconPlus from './IconPlus';
+
+import SpriteSVG from '../img/SpriteSvg';
+import DottedLine from './DottedLine';
+import Content from './Content';
 
 export default function Accordion() {
   const [activeTab, setActiveTab] = useState<number | null>(null);
+  const [iconStates, setIconStates] = useState<{ [key: number]: boolean }>({});
 
-  const isMobileScreen = useMediaQuery({ query: '(max-width: 767.9px)' });
-  const isTabletScreen = useMediaQuery({
-    query: '(min-width: 768px) and (max-width: 1439.9px)',
-  });
-  const isDesktopScreen = useMediaQuery({ query: '(min-width: 1440px)' });
+  const { isOnMobile } = useMediaQueries();
 
   const handleTabClick = (index: number) => {
     setActiveTab(activeTab === index ? null : index);
-    console.log(index);
+
+    setIconStates(prevStates => ({
+      ...prevStates,
+      [index]: !prevStates[index],
+    }));
+
+    Object.keys(iconStates).forEach(key => {
+      const tabKey = parseInt(key);
+      if (tabKey !== index && iconStates[tabKey]) {
+        setIconStates(prevStates => ({
+          ...prevStates,
+          [tabKey]: false,
+        }));
+      }
+    });
   };
 
   return (
     <div>
       <ul className="flex flex-col gap-16">
         {accordionHeaderData.map((item, index) => (
-          <li key={index} className="overflow-x-hidden relative">
-            <div className="py-[19.5px] ">
-              <div className="flex justify-between items-center ">
-                <h3 className="text-2xl leading-none text-stone-900">{item}</h3>
+          <li key={index} className="relative">
+            <div>
+              <div className="flex justify-between items-center">
+                <h3 className="text-2xl md:text-[40px] leading-none text-stone-900">
+                  {item}
+                </h3>
 
-                <button onClick={() => handleTabClick(index)}>
-                  <IconPlus />
+                <button
+                  className="flex justify-center items-center w-[43px] h-[72px] md:w-[50px] md:h-[72px]"
+                  onClick={() => handleTabClick(index)}
+                >
+                  <SpriteSVG
+                    name={
+                      (iconStates[index] &&
+                        (isOnMobile
+                          ? 'minus-mobile'
+                          : 'minus-tablet-desktop')) ||
+                      (isOnMobile ? 'plus-mobile' : 'plus-tablet-desktop')
+                    }
+                  />
                 </button>
               </div>
             </div>
 
-            {/* absolute -left-[8px] bottom-0 */}
-            {/* <div className="flex gap-[23px]">
-              {isMobileScreen &&
-                [...Array(7)].map((_, index) => (
-                  <div
-                    key={index}
-                    className="w-[24px] h-[1px] bg-stone-900"
-                  ></div>
-                ))}
-              {isTabletScreen &&
-                [...Array(16)].map((_, index) => (
-                  <div
-                    key={index}
-                    className="w-[24px] h-[1px] bg-stone-900"
-                  ></div>
-                ))}
-              {isDesktopScreen &&
-                [...Array(25)].map((_, index) => (
-                  <div
-                    key={index}
-                    className="w-[24px] h-[1px] bg-stone-900"
-                  ></div>
-                ))}
-            </div> */}
-
-            <div
-              className={`absolute left-0 bottom-0
-              ${activeTab === index ? 'block' : 'hidden'}`}
-            >
-              {activeTab === 0 && (
-                <div className="w-full h-full bg-red-700">Жопа1</div>
-              )}
-              {activeTab === 1 && <div className="">Жопа2</div>}
-              {activeTab === 2 && <div className="">Жопа3</div>}
-            </div>
+            <DottedLine />
+            <Content activeTab={activeTab} index={index} />
           </li>
         ))}
       </ul>
