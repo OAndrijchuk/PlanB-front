@@ -47,6 +47,9 @@ const config: Config = {
       boxShadow: {
         custom:
           '1px 7px 16px 0px rgba(42, 40, 40, 0.10), 2px 29px 29px 0px rgba(42, 40, 40, 0.09), 5px 66px 40px 0px rgba(42, 40, 40, 0.05), 10px 117px 47px 0px rgba(42, 40, 40, 0.01), 15px 183px 51px 0px rgba(42, 40, 40, 0.00);',
+        online:
+          '0px 4px 9px 0px rgba(250, 207, 194, 0.10), 0px 16px 16px 0px rgba(250, 207, 194, 0.09), 0px 36px 21px 0px rgba(250, 207, 194, 0.05), 0px 63px 25px 0px rgba(250, 207, 194, 0.01), 0px 99px 28px 0px rgba(250, 207, 194, 0.00);',
+        up: '0px 1px 2px 0px rgba(226, 197, 187, 0.10), 0px 3px 3px 0px rgba(226, 197, 187, 0.09), 0px 7px 4px 0px rgba(226, 197, 187, 0.05), 0px 12px 5px 0px rgba(226, 197, 187, 0.01), 0px 18px 5px 0px rgba(226, 197, 187, 0.00);',
       },
     },
   },
