@@ -46,16 +46,13 @@ export default function Accordion() {
                 </h3>
 
                 <button
-                  className="flex justify-center items-center w-[43px] h-[72px] md:w-[50px] md:h-[72px]"
+                  className="flex justify-center items-center w-[43px] h-[72px] md:w-[50px] md:h-[72px] px-1 md:px-2"
                   onClick={() => handleTabClick(index)}
                 >
                   <SpriteSVG
                     name={
-                      (iconStates[index] &&
-                        (isOnMobile
-                          ? 'minus-mobile'
-                          : 'minus-tablet-desktop')) ||
-                      (isOnMobile ? 'plus-mobile' : 'plus-tablet-desktop')
+                      (iconStates[index] && 'minus-tablet-desktop') ||
+                      'plus-tablet-desktop'
                     }
                   />
                 </button>

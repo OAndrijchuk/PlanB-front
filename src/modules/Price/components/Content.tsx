@@ -1,32 +1,29 @@
 import Image from 'next/image';
-
 import dulya from '../img/dulya.png';
 import monkey from '../img/monkey.jpeg';
 import eye from '../img/eye.png';
 
-type AccordionContentProps = {
+type ContentProps = {
   activeTab: number | null;
   index: number;
 };
 
-export default function Content({ activeTab, index }: AccordionContentProps) {
+const images = [
+  { src: dulya, alt: 'Dulya' },
+  { src: monkey, alt: 'Monkey' },
+  { src: eye, alt: 'Eye' },
+];
+
+export default function Content({ activeTab, index }: ContentProps) {
   return (
     <div className={`${activeTab === index ? 'block' : 'hidden'}`}>
-      {activeTab === 0 && (
-        <div className="flex justify-center pt-[56px] md:pt-[80px]">
-          <Image src={dulya} width={300} height={500} alt="Dulya" />
+      {images.map((image, index) => (
+        <div key={index} className="flex justify-center pt-[56px] md:pt-[80px]">
+          {activeTab === index && (
+            <Image src={image.src} width={300} height={500} alt={image.alt} />
+          )}
         </div>
-      )}
-      {activeTab === 1 && (
-        <div className="flex justify-center pt-[56px] md:pt-[80px]">
-          <Image src={monkey} width={300} height={500} alt="Dulya" />
-        </div>
-      )}
-      {activeTab === 2 && (
-        <div className="flex justify-center pt-[56px] md:pt-[80px]">
-          <Image src={eye} width={300} height={500} alt="Dulya" />
-        </div>
-      )}
+      ))}
     </div>
   );
 }
