@@ -3,8 +3,8 @@
       rgba(255, 249, 247, 0.7),
       rgba(255, 249, 247, 0.7)
     ),
-    url('../../modules/Price/img/price_bg320@1x.jpg');
-  background-position: center;
+    url('../../modules/Price/img/bg_price320@1x.jpeg');
+  background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -17,7 +17,7 @@
         rgba(255, 249, 247, 0.7),
         rgba(255, 249, 247, 0.7)
       ),
-      url('../../modules/Price/img/price_bg320@2x.jpg');
+      url('../../modules/Price/img/bg_price320@2x.jpeg');
   }
 }
 
@@ -27,7 +27,7 @@
         rgba(255, 249, 247, 0.7),
         rgba(255, 249, 247, 0.7)
       ),
-      url('../../modules/Price/img/price_bg768@1x.jpg');
+      url('../../modules/Price/img/bg_price768@1x.jpeg');
   }
 
   @media only screen and (min-device-pixel-ratio: 2),
@@ -38,7 +38,7 @@
           rgba(255, 249, 247, 0.7),
           rgba(255, 249, 247, 0.7)
         ),
-        url('../../modules/Price/img/price_bg768@2x.jpg');
+        url('../../modules/Price/img/bg_price768@2x.jpeg');
     }
   }
 }
@@ -49,7 +49,7 @@
         rgba(255, 249, 247, 0.7),
         rgba(255, 249, 247, 0.7)
       ),
-      url('../../modules/Price/img/price_bg1440@1x.jpg');
+      url('../../modules/Price/img/bg_price1440@1x.jpeg');
   }
 
   @media only screen and (min-device-pixel-ratio: 2),
@@ -60,7 +60,7 @@
           rgba(255, 249, 247, 0.7),
           rgba(255, 249, 247, 0.7)
         ),
-        url('../../modules/Price/img/price_bg1440@2x.jpg');
+        url('../../modules/Price/img/bg_price1440@2x.jpeg');
     }
   }
 }
