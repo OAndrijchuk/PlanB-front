@@ -14,8 +14,8 @@ const Card = ({ master }: CardProps) => {
   return (
     <li
       className="relative h-[384px] w-[288px]
-     md:flex-row h-[328px] w-[232px]
-      xl:flex-row h-[508px] w-[364px]"
+      md:flex-row md:h-[328px] md:w-[232px]
+      xl:flex-row xl:h-[508px] xl:w-[364px]"
     >
       <Image
         src={img}
