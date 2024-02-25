@@ -27,7 +27,7 @@ const ButtonScrollToUp: React.FC = () => {
     <button
       onClick={scrollToTop}
       type="button"
-      className={twMerge(`fixed right-4 bottom-52 w-[36px] h-[48px]  bg-red-200 opacity-50 rounded-custom cursor-pointer hover:bg-red-100 active:bg-red-300
+      className={twMerge(`fixed right-4 bottom-52 w-[36px] h-[48px]  bg-red-200 opacity-50 rounded-custom cursor-pointer shadow-up hover:bg-red-100 focus:bg-red-100 active:bg-red-300
       md:right-8
       xl:right-16
       ${isVisible ? 'visible' : 'hidden'}
