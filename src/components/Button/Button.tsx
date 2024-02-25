@@ -3,23 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Modal } from '..';
 import { Feedback } from '@/modules';
+import useVisibility from '@/hooks/useVisibility';
 
 const Button: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const isVisible = useVisibility(500);
   const toggleModal = () => setIsOpen(prev => !prev);
-
-  useEffect(() => {
-    const toggleVisibility = () => {
-      window.scrollY > 500 ? setIsVisible(true) : setIsVisible(false);
-    };
-
-    window.addEventListener('scroll', toggleVisibility);
-
-    return () => {
-      window.removeEventListener('scroll', toggleVisibility);
-    };
-  }, []);
 
   return (
     <>
