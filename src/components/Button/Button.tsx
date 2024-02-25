@@ -26,7 +26,7 @@ const Button: React.FC = () => {
       <button
         onClick={() => setIsOpen(true)}
         type="button"
-        className={twMerge(`fixed right-4 bottom-10 w-[80px] h-[78px] text-black text-base font-medium leading-none bg-red-200 rounded-full cursor-pointer hover:bg-red-100 active:bg-red-300
+        className={twMerge(`fixed right-4 bottom-10 w-[80px] h-[78px] text-black text-base font-medium leading-none bg-red-200 rounded-full cursor-pointer shadow-online hover:bg-red-100 focus:bg-red-100 active:bg-red-300
       md:right-8
       ${isVisible ? 'visible' : 'hidden'}
       `)}
