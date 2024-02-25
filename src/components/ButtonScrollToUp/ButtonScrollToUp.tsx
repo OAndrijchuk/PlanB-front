@@ -1,20 +1,11 @@
 'use client';
-import { SpriteSVG } from '@/assets/img/SpriteSVG';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { twMerge } from 'tailwind-merge';
+import useVisibility from '@/hooks/useVisibility';
+import { SpriteSVG } from '@/assets/img/SpriteSVG';
 
 const ButtonScrollToUp: React.FC = () => {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-
-  useEffect(() => {
-    const toggleVisibility = () => {
-      window.scrollY > 500 ? setIsVisible(true) : setIsVisible(false);
-    };
-    window.addEventListener('scroll', toggleVisibility);
-    return () => {
-      window.removeEventListener('scroll', toggleVisibility);
-    };
-  }, []);
+  const isVisible = useVisibility(500);
 
   const scrollToTop = () => {
     isVisible &&
