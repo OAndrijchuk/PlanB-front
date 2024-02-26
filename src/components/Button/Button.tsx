@@ -1,9 +1,9 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Modal } from '..';
-import { Feedback } from '@/modules';
 import useVisibility from '@/hooks/useVisibility';
+import Form_Thumb from '@/modules/Form/Form_Thumb';
 
 const Button: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -24,7 +24,7 @@ const Button: React.FC = () => {
       </button>
       {isOpen && (
         <Modal isOpen={isOpen} onClose={toggleModal}>
-          <Feedback />
+          <Form_Thumb />
         </Modal>
       )}
     </>
