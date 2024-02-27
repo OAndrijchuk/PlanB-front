@@ -6,8 +6,6 @@ export type CardProps = {
   master: Master;
 };
 
-const blurDataURL = 'data:image/png;base64';
-
 const Card = ({ master }: CardProps) => {
   const { name, experience, position, img } = master;
 
