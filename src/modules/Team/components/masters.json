@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Аліна Велігіна",
+    "experience": 5,
+    "position": "Фахівець з епіляції",
+    "img": "/AlinaV.jpeg"
+  },
+  {
+    "name": "Марина Андрійчук",
+    "experience": 5,
+    "position": "Фахівець з епіляції",
+    "img": "/MarynaA.jpeg"
+  },
+  {
+    "name": "Аліна Мʼялковська",
+    "experience": 2.5,
+    "position": "Фахівець з епіляції",
+    "img": "/AlinaM.jpeg"
+  }
+]
