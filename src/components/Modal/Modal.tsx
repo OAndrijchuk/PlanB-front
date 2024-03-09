@@ -29,18 +29,26 @@ type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
   children?: ReactNode;
-  className?: string;
+  contentClassName?: string;
+  backdropClassName?: string;
   closeBtnClassName?: string;
 };
 
-const modalRoot: Element | null = document.querySelector('#modal-root');
 
-const Modal: React.FC<ModalProps> = ({
+
+const Modal: React.FC<ModalProps> = (props) => {
+
+const {
   isOpen,
   onClose,
   children,
-  className,
-}) => {
+  closeBtnClassName,
+  contentClassName,
+  backdropClassName,
+} = props;
+
+  const modalRoot: Element | null = document.querySelector('#modal-root');
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -68,16 +76,16 @@ const Modal: React.FC<ModalProps> = ({
       <>
         {isOpen && (
           <div
-            className=" z-[9999999] fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+            className={twMerge(" z-[9999999] fixed inset-0 flex items-center justify-center bg-black bg-opacity-50", backdropClassName)}
             onClick={handleBackdropClick}
           >
             <div
               className={twMerge(
                 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  z-50  px-4 py-10 bg-neutral-800 text-stone-50 rounded-xl md:p-8',
-                className
+                contentClassName
               )}
             >
-              <ButtonClose onClick={onClose}>
+              <ButtonClose onClick={onClose} className={closeBtnClassName}>
                 <SpriteSVG name="close" />
               </ButtonClose>
               {children}
