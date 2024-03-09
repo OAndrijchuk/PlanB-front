@@ -8,6 +8,8 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   type?: string;
   elementType: 'input' | 'select';
+  pattern?: string;
+  inputmode?: string;
   options?: Array<{ value: string; label: string }>;
   placeholder?: string;
   onChange: (
@@ -78,7 +80,7 @@ const Input: React.FC<InputProps> = ({
           onBlur={onBlur}
           value={value}
           required
-          className={twMerge(`mb-4 py-[10px] px-4 min-w-[288px] text-base font-medium text-stone-900 bg-stone-50 rounded-custom placeholder:text-neutral-400 outline-none
+          className={twMerge(`mb-12 py-[10px] px-4 min-w-[288px] text-base font-medium text-stone-900 bg-stone-50 rounded-custom placeholder:text-neutral-400 outline-none
         md:min-w-[420px]
            ${error && 'text-red-700 '}`)}
         >

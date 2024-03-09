@@ -10,7 +10,7 @@ export const validationSchema = () => {
       .required(`Ім'я обов'язкове до заповнення`),
 
     phone: Yup.string()
-      .matches(/^\+380\d{9}$/, `Невірний формат телефону`)
+      .matches(/^\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}$/, `Невірний формат телефону`)
       .required(`Телефон обов'язковий до заповнення`),
 
     service: Yup.string().required('Оберіть процедуру'),

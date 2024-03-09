@@ -7,12 +7,14 @@ import { validationSchema } from '../helpers/validationShcema';
 import { handleSubmit } from '../helpers/handleSubmit';
 
 import Input from './Input';
+import { formatPhoneNumber } from '../helpers/formatPhoneNumber';
 
-export type FormProps = {
+type FormProps = {
   name: string;
   phone: string;
   service: string;
 };
+
 const initialValues: FormProps = {
   name: '',
   phone: '',
@@ -29,6 +31,10 @@ const Form = () => {
       handleSubmit;
     },
   });
+  const handlePhoneChange = (e: { target: { value: string } }) => {
+    const formattedPhoneNumber = formatPhoneNumber(e.target.value);
+    formik.setFieldValue('phone', formattedPhoneNumber);
+  };
 
   return (
     <form
@@ -54,10 +60,13 @@ const Form = () => {
         aria-label="Ваше телефон"
         id="phone"
         name="phone"
-        type="tel"
+        type="text"
+        pattern="^\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+        inputmode="tel"
         placeholder="+380"
-        onChange={formik.handleChange}
+        onChange={handlePhoneChange}
         onBlur={formik.handleBlur}
+        // onInput={handlePhoneChange}
         value={formik.values.phone}
         error={formik.touched.phone && formik.errors.phone}
       />
@@ -70,11 +79,13 @@ const Form = () => {
         onBlur={formik.handleBlur}
         value={formik.values.service}
         options={[
+          { value: '', label: '' },
           { value: 'Laser_epilation', label: LASER },
           { value: 'Electroepilation', label: ELECTRO },
           { value: 'Sugaring', label: SUGARING },
         ]}
       />
+
       <ButtonAppointment type="submit">Відправити</ButtonAppointment>
     </form>
   );
