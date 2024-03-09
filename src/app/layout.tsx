@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import '../assets/styles/globals.css';
-import { Button } from '@/components';
+import { Button, ButtonScrollToUp } from '@/components';
 
 export const metadata: Metadata = {
   title: 'Студія PlanB',
@@ -17,6 +17,7 @@ export default function RootLayout({
       <body>
         <main>
           {children}
+          <ButtonScrollToUp />
           <Button />
           <div id="modal-root"></div>
         </main>
