@@ -3,6 +3,8 @@
 import { SpriteSVG } from '@/assets/img/SpriteSVG';
 import { createPortal } from 'react-dom';
 import React, { useEffect, ReactNode } from 'react';
+import { twMerge } from 'tailwind-merge';
+import { ButtonClose } from '..';
 
 //=========>>> Usage example <=================
 
@@ -27,11 +29,18 @@ type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
   children?: ReactNode;
+  className?: string;
+  closeBtnClassName?: string;
 };
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
-  const modalRoot: Element | null = document.querySelector('#modal-root');
+const modalRoot: Element | null = document.querySelector('#modal-root');
 
+const Modal: React.FC<ModalProps> = ({
+  isOpen,
+  onClose,
+  children,
+  className,
+}) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -62,13 +71,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
             className=" z-[9999999] fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
             onClick={handleBackdropClick}
           >
-            <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  z-50  px-4 py-10 bg-neutral-800 text-stone-50 rounded-xl md:p-8">
-              <button
-                onClick={onClose}
-                className="absolute block w-6 h-6 top-10 right-4 cursor-pointer rounded-full hover:bg-extraAccent transition-colors hover:text-accent md:right-8"
-              >
+            <div
+              className={twMerge(
+                'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  z-50  px-4 py-10 bg-neutral-800 text-stone-50 rounded-xl md:p-8',
+                className
+              )}
+            >
+              <ButtonClose onClick={onClose}>
                 <SpriteSVG name="close" />
-              </button>
+              </ButtonClose>
               {children}
             </div>
           </div>
