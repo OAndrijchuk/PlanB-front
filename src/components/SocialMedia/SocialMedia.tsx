@@ -5,23 +5,50 @@ import { twMerge } from 'tailwind-merge';
 
 type SocialMediaProps = {
   children?: ReactNode;
-  className?: string;
+  wrapperClassName?: string;
+  textClassName?: string;
+  mediaClassName?: string;
+  linkClassName?: string;
+  text?: ReactNode;
+  mediaLinkClassName?: string;
 };
-export const SocialMedia = ({ className }: SocialMediaProps) => {
+
+export const SocialMedia = ({
+  wrapperClassName,
+  textClassName,
+  mediaClassName,
+  text,
+  mediaLinkClassName,
+}: SocialMediaProps) => {
   return (
-    <div className="flex gap-2 flex-col p-0 m-0 mx-auto">
-      <div className="font-ttChocolates500 md:text-[14px] xl:text-[16px] tracking-wide">
-        Слідкуйте за <strong className="uppercase">акціями</strong> в наших
-        соцмережах
+    <div className={twMerge('m-auto', wrapperClassName)}>
+      <div
+        className={twMerge(
+          'font-ttChocolates500 md:text-[14px] xl:text-[16px] tracking-wide',
+          textClassName
+        )}
+      >
+        {/* Слідкуйте за <strong className="uppercase">акціями</strong> в наших
+        соцмережах */}
+        {text}
       </div>
-      <div className="flex justify-between ">
-        <Link className="md:w-[24px] xl:text-[32px]" href="#">
+      <div className={twMerge('flex justify-between', mediaClassName)}>
+        <Link
+          className={twMerge('md:w-[24px] xl:text-[32px]', mediaLinkClassName)}
+          href="#"
+        >
           <SpriteSVG name="instagram" />
         </Link>
-        <Link className="md:w-[24px] xl:text-[32px]" href="#">
+        <Link
+          className={twMerge('md:w-[24px] xl:text-[32px]', mediaLinkClassName)}
+          href="#"
+        >
           <SpriteSVG name="tic_tok" />
         </Link>
-        <Link className="md:w-[24px] xl:text-[32px]" href="#">
+        <Link
+          className={twMerge('md:w-[24px] xl:text-[32px]', mediaLinkClassName)}
+          href="#"
+        >
           <SpriteSVG name="facebook" />
         </Link>
       </div>
