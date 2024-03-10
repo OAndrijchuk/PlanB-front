@@ -6,6 +6,7 @@ const useVisibility = (offset = 500) => {
 
   useEffect(() => {
     const toggleVisibility = () => {
+      console.log(window.scrollY);
       window.scrollY > offset ? setIsVisible(true) : setIsVisible(false);
     };
 
