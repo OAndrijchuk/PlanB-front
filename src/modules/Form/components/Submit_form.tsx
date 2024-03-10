@@ -1,15 +1,19 @@
 'use client';
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { useFormik } from 'formik';
 import { ELECTRO, LASER, SUGARING } from '@/assets/consts/services';
 import { ButtonAppointment } from '@/components';
-import { validationSchema } from '../helpers/validationShcema';
-import { handleSubmit } from '../helpers/handleSubmit';
 
 import Input from './Input';
-import { formatPhoneNumber } from '../helpers/formatPhoneNumber';
+import {
+  formatPhoneInput,
+  handleSubmit,
+  saveDataToLocal,
+  validationSchema,
+} from '../helpers';
+import { InfinitySpin } from 'react-loader-spinner';
 
-type FormProps = {
+export type FormProps = {
   name: string;
   phone: string;
   service: string;
@@ -21,19 +25,35 @@ const initialValues: FormProps = {
   service: '',
 };
 
+const getInitialValues = () => {
+  const savedFormData = localStorage.getItem('formData');
+  if (savedFormData) {
+    return JSON.parse(savedFormData);
+  }
+  return initialValues;
+};
+
 const Form = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const formik = useFormik({
-    initialValues: initialValues,
+    initialValues: getInitialValues(),
     validationSchema: validationSchema,
-    onSubmit: (values: FormProps, actions) => {
-      handleSubmit;
+    onSubmit: async (values, actions) => {
+      setIsLoading(true);
+      await handleSubmit(values, actions);
+      setIsLoading(false);
+      localStorage.removeItem('formData');
     },
   });
+
   const handlePhoneChange = (e: { target: { value: string } }) => {
-    const formattedPhoneNumber = formatPhoneNumber(e.target.value);
+    const formattedPhoneNumber = formatPhoneInput(e.target.value);
     formik.setFieldValue('phone', formattedPhoneNumber);
+    saveDataToLocal({
+      ...formik.values,
+      phone: formattedPhoneNumber,
+    });
   };
 
   return (
@@ -61,12 +81,12 @@ const Form = () => {
         id="phone"
         name="phone"
         type="text"
-        pattern="^\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
         inputmode="tel"
-        placeholder="+380"
+        //+38 (XXX) XXX-XX-XX
+        // +38 (098) 999-99-99
+        placeholder="+38 (0XX)"
         onChange={handlePhoneChange}
         onBlur={formik.handleBlur}
-        // onInput={handlePhoneChange}
         value={formik.values.phone}
         error={formik.touched.phone && formik.errors.phone}
       />
@@ -80,12 +100,19 @@ const Form = () => {
         value={formik.values.service}
         options={[
           { value: '', label: '' },
-          { value: 'Laser_epilation', label: LASER },
-          { value: 'Electroepilation', label: ELECTRO },
-          { value: 'Sugaring', label: SUGARING },
+          { value: `${LASER}`, label: LASER },
+          { value: `${ELECTRO}`, label: ELECTRO },
+          { value: `${SUGARING}`, label: SUGARING },
         ]}
       />
-
+      {/* {isLoading && (
+        <InfinitySpin
+          visible={true}
+          width="200"
+          color="#FACFC2"
+          ariaLabel="infinity-spin-loading"
+        />
+      )} */}
       <ButtonAppointment type="submit">Відправити</ButtonAppointment>
     </form>
   );

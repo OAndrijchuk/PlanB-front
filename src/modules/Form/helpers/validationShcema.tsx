@@ -4,9 +4,10 @@ import * as Yup from 'yup';
 export const validationSchema = () => {
   return Yup.object({
     name: Yup.string()
+      .trim()
       .matches(/^[a-zA-Zа-яА-ЯґҐєЄіІїЇ\s]*$/, `Введіть Ваше ім'я`)
       .min(MIN, `Ім'я повиннo бути не менше ${MIN} символів`)
-      .max(MAX, `Ім'я повиннo бути не більше ${MIN} символів`)
+      .max(MAX, `Ім'я повиннo бути не більше ${MAX} символів`)
       .required(`Ім'я обов'язкове до заповнення`),
 
     phone: Yup.string()

@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import Form_Submit from './components/Form';
+import Form_Submit from './components/Submit_form';
 
 type FormProps = {
   children?: ReactNode;

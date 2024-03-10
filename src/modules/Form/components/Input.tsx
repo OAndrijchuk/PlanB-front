@@ -24,7 +24,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   ) => void;
   value: string;
   autoComplete?: string;
-  error?: string | false | undefined;
+  error?: unknown;
   className?: string;
 }
 
