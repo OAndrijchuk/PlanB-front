@@ -1,7 +1,7 @@
 import { Logo } from '@/components';
 import React from 'react';
 
-const Accept_form = () => {
+export const Accept_form = () => {
   return (
     <div
       className="pt-40 pb-[166px] m-auto max-w-[237px] 
@@ -23,5 +23,3 @@ const Accept_form = () => {
     </div>
   );
 };
-
-export default Accept_form;

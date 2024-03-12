@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import Form_Submit from './components/Submit_form';
+import { Submit_form } from './components';
 
 type FormProps = {
   children?: ReactNode;
@@ -14,7 +14,7 @@ const Form_Thumb: React.FC<FormProps> = () => {
       >
         Залишайте свої контакти і ми з Вами зв&apos;яжемося
       </h2>
-      <Form_Submit />
+      <Submit_form />
     </>
   );
 };
