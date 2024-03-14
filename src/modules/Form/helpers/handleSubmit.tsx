@@ -5,6 +5,7 @@ export const handleSubmit = async (
   action: FormikHelpers<any>
 ) => {
   alert(JSON.stringify(values, null, 2));
+
   action.resetForm();
   // try {
   //   const endpoint = '';

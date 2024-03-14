@@ -1,14 +1,13 @@
 'use client';
 import { ELECTRO, LASER, SUGARING } from '@/assets/consts/services';
-import { SpriteSVG } from '@/assets/img/SpriteSVG';
-import React, { useState } from 'react';
+import React from 'react';
 import Select from 'react-select';
 import { twMerge } from 'tailwind-merge';
 
 interface SelectWrapperProps {
   value: string;
   onChange: (value: string) => void;
-  error?: unknown;
+  error?: string;
 }
 
 const options = [
@@ -17,7 +16,7 @@ const options = [
   { value: `${SUGARING}`, label: SUGARING },
 ];
 
-export const SelectWrapper: React.FC<SelectWrapperProps> = ({
+const SelectWrapper: React.FC<SelectWrapperProps> = ({
   value,
   onChange,
   error,
@@ -66,7 +65,7 @@ export const SelectWrapper: React.FC<SelectWrapperProps> = ({
           singleValue: () => 'text-stone-900',
           input: () => 'm-0 p-0 cursor-pointer',
           menu: () =>
-            'top-[56px] right-0 max-w-[219px] m-0 bg-stone-50 rounded-custom ',
+            twMerge('right-0 max-w-[219px] m-0 bg-stone-50 rounded-custom'),
           menuList: () => 'max-w-[219px] p-0 rounded-custom ',
           dropdownIndicator: state =>
             twMerge(
@@ -74,10 +73,10 @@ export const SelectWrapper: React.FC<SelectWrapperProps> = ({
               error ? 'text-red-700' : '',
               state.isFocused ? 'rotate-180' : 'rotate-0'
             ),
-          // indicatorsContainer: () => 'w-6 h-6',
         }}
         classNamePrefix="react-select"
       />
     </>
   );
 };
+export default SelectWrapper;

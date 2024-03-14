@@ -1,7 +1,7 @@
 import { Logo } from '@/components';
 import React from 'react';
 
-export const Accept_form = () => {
+const Success_modal = () => {
   return (
     <div
       className="pt-40 pb-[166px] m-auto max-w-[237px] 
@@ -23,3 +23,5 @@ export const Accept_form = () => {
     </div>
   );
 };
+
+export default Success_modal;

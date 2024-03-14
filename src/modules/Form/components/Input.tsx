@@ -1,4 +1,5 @@
 'use client';
+
 import React, { InputHTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
 
@@ -10,22 +11,14 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   type?: string;
   inputmode: string;
   placeholder?: string;
-  onChange: (
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLSelectElement>
-  ) => void;
-  onBlur?: (
-    event:
-      | React.FocusEvent<HTMLInputElement>
-      | React.FocusEvent<HTMLSelectElement>
-  ) => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
   value: string;
   autoComplete?: string;
-  error?: unknown;
+  error?: string;
 }
 
-export const Input: React.FC<InputProps> = ({
+const Input: React.FC<InputProps> = ({
   label,
   id,
   name,
@@ -77,3 +70,4 @@ export const Input: React.FC<InputProps> = ({
     </div>
   );
 };
+export default Input;
