@@ -1,7 +1,12 @@
-import React from 'react';
-import { ButtonAppointment, Container, Section } from '@/components';
+'use client';
+import React, { useState } from 'react';
+import { ButtonAppointment, Container, Modal, Section } from '@/components';
+import { Form } from '..';
 
 const Hero = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const toggleModal = () => setIsOpen(prev => !prev);
+
   return (
     <Section
       id="hero"
@@ -23,7 +28,12 @@ const Hero = () => {
         >
           Видалення не бажаного волосся ефективно та без болю
         </p>
-        <ButtonAppointment />
+        <ButtonAppointment onClick={() => setIsOpen(true)} />
+        {isOpen && (
+          <Modal isOpen={isOpen} onClose={toggleModal}>
+            <Form />
+          </Modal>
+        )}
       </Container>
     </Section>
   );
