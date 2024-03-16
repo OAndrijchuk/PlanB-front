@@ -24,7 +24,7 @@ export const SocialMedia = ({
     <div className={twMerge('m-auto', wrapperClassName)}>
       <div
         className={twMerge(
-          'font-ttChocolates500 md:text-[14px] xl:text-[16px] tracking-wide',
+          'font-ttChocolates500 text-[16px] md:text-[18px]',
           textClassName
         )}
       >
@@ -33,22 +33,13 @@ export const SocialMedia = ({
         {text}
       </div>
       <div className={twMerge('flex justify-between', mediaClassName)}>
-        <Link
-          className={twMerge('md:w-[24px] xl:text-[32px]', mediaLinkClassName)}
-          href="#"
-        >
+        <Link className={twMerge('md:w-[24px]', mediaLinkClassName)} href="#">
           <SpriteSVG name="instagram" />
         </Link>
-        <Link
-          className={twMerge('md:w-[24px] xl:text-[32px]', mediaLinkClassName)}
-          href="#"
-        >
+        <Link className={twMerge('md:w-[24px]', mediaLinkClassName)} href="#">
           <SpriteSVG name="tic_tok" />
         </Link>
-        <Link
-          className={twMerge('md:w-[24px] xl:text-[32px]', mediaLinkClassName)}
-          href="#"
-        >
+        <Link className={twMerge('md:w-[24px]', mediaLinkClassName)} href="#">
           <SpriteSVG name="facebook" />
         </Link>
       </div>

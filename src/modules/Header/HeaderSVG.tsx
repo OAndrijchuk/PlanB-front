@@ -16,7 +16,7 @@ const HeaderSVG: React.FC<SpriteProps> = ({ name }) => {
         >
           <defs>
             <clipPath id="a">
-              <path fill="#fff" fill-opacity="0" d="M0 0h40v40H0z" />
+              <path fill="#fff" fillOpacity="0" d="M0 0h40v40H0z" />
             </clipPath>
           </defs>
           <g clipPath="url(#a)">

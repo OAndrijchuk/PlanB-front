@@ -33,7 +33,16 @@ const Header = () => {
             <HeaderSVG name="burgerMenu" />
           </button>
           <div className="hidden xl:flex flex-col gap-[8px] md:w-[350px] font-ttChocolates500 text-[16px] font-medium leading-6 tracking-wider">
-            <Contacts />
+            <Contacts
+              location={
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      'м. Кам’янець-Подільский, БЦ “Розмарин” <br/>  вул. Лесі Українки 31, каб. 605',
+                  }}
+                />
+              }
+            />
           </div>
           <Logo className="w-[66px] h-[54px] flex-1 md:w-[126px] md:h-[100px]" />
           <div className="hidden md:w-[150px] md:block md:flex-2 xl:w-[176px] xl-[32px]">
