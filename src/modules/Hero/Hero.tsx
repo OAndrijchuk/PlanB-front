@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { ButtonAppointment, Container, Modal, Section } from '@/components';
 import { Form } from '..';
 
-const Hero = () => {
+const Hero: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggleModal = () => setIsOpen(prev => !prev);
 
@@ -28,7 +28,9 @@ const Hero = () => {
         >
           Видалення не бажаного волосся ефективно та без болю
         </p>
-        <ButtonAppointment onClick={() => setIsOpen(true)} />
+        <ButtonAppointment onClick={() => setIsOpen(true)} type="button">
+          Записатися
+        </ButtonAppointment>
         {isOpen && (
           <Modal isOpen={isOpen} onClose={toggleModal}>
             <Form />
