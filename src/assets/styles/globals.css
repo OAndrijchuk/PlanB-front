@@ -102,3 +102,11 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
+body .react-select__Svg {
+  width: 24px;
+  height: 24px;
+}
+body .react-select__menu {
+  top: 56px;
+}
