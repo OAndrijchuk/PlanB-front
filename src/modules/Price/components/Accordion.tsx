@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import useMediaQueries from '../../../hooks/useMediaQueries';
 
 import accordionHeaderData from '../data/accordion-header-data';
 
@@ -12,8 +11,6 @@ import Content from './Content';
 export default function Accordion() {
   const [activeTab, setActiveTab] = useState<number | null>(null);
   const [iconStates, setIconStates] = useState<{ [key: number]: boolean }>({});
-
-  const { isOnMobile } = useMediaQueries();
 
   const handleTabClick = (index: number) => {
     setActiveTab(activeTab === index ? null : index);

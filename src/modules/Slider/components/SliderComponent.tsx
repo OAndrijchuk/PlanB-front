@@ -7,24 +7,32 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Mousewheel, Keyboard } from 'swiper/modules';
 import useMediaQueries from '@/hooks/useMediaQueries';
 
+import slideData from '../data/slide-data';
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import '../styles.css';
+import SpriteSVG from '../img/SpriteSVG';
+import { twMerge } from 'tailwind-merge';
 
 export default function App() {
-  const { isOnMobile, isOnTablet, isOnDesktop } = useMediaQueries();
+  const { isOnMobile, isOnTablet } = useMediaQueries();
 
   let slidesPerView;
+  let spaceBetween;
 
   if (isOnMobile) {
     slidesPerView = 1;
+    spaceBetween = 30;
   } else if (isOnTablet) {
     slidesPerView = 3;
+    spaceBetween = 50;
   } else {
     slidesPerView = 3;
+    spaceBetween = 153;
   }
 
   return (
@@ -38,94 +46,38 @@ export default function App() {
         loop={true}
         slidesPerView={slidesPerView}
         initialSlide={0}
-        spaceBetween={30}
-        navigation={true}
+        spaceBetween={spaceBetween}
+        navigation={{
+          nextEl: '.mySwiper-button-next',
+          prevEl: '.mySwiper-button-prev',
+        }}
         pagination={{
-          clickable: true,
+          type: 'fraction',
         }}
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <div className="">
-            <p>Slide 1</p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis
-            veniam quos aliquid ratione quia itaque exercitationem voluptatum
-            beatae esse iure nihil
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="">
-            <p>Slide 2</p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis
-            veniam quos aliquid ratione quia itaque exercitationem voluptatum
-            beatae esse iure nihil
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="">
-            <p>Slide 3</p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis
-            veniam quos aliquid ratione quia itaque exercitationem voluptatum
-            beatae esse iure nihil
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="">
-            <p>Slide 4</p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis
-            veniam quos aliquid ratione quia itaque exercitationem voluptatum
-            beatae esse iure nihil
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="">
-            <p>Slide 5</p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis
-            veniam quos aliquid ratione quia itaque exercitationem voluptatum
-            beatae esse iure nihil
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="">
-            <p>Slide 6</p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis
-            veniam quos aliquid ratione quia itaque exercitationem voluptatum
-            beatae esse iure nihil
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="">
-            <p>Slide 7</p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis
-            veniam quos aliquid ratione quia itaque exercitationem voluptatum
-            beatae esse iure nihil
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="">
-            <p>Slide 8</p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis
-            veniam quos aliquid ratione quia itaque exercitationem voluptatum
-            beatae esse iure nihil
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="">
-            <p>Slide 9</p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis
-            veniam quos aliquid ratione quia itaque exercitationem voluptatum
-            beatae esse iure nihil
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="">
-            <p>Slide 10</p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis
-            veniam quos aliquid ratione quia itaque exercitationem voluptatum
-            beatae esse iure nihil
-          </div>
-        </SwiperSlide>
+        {slideData.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <div>
+              <div>
+                <p className="mt-[64px] md:mt-[32px] md:text-sm">
+                  {slide.description}
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+
+        <div className="flex items-center justify-center w-full gap-4 md:gap-5 relative">
+          <button className="mySwiper-button-prev">
+            <SpriteSVG width="134" name="arrow" />
+          </button>
+
+          <button className={twMerge(`mySwiper-button-next`, `rotate-180`)}>
+            <SpriteSVG width="134" name="arrow" />
+          </button>
+        </div>
       </Swiper>
     </>
   );
