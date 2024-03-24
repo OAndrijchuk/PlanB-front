@@ -8,7 +8,7 @@ const Team = () => {
   return (
     <Section className="bg-neutral-800">
       <Container className="pb-[120px] pt-0 xl:pb-[144px]">
-        <SectionTitle className="text-6xl font-caveat400 text-[56px] font-normal tracking-normal leading-12 md:text-[72px]">
+        <SectionTitle className="text-6xl font-caveat400 text-[56px] font-normal tracking-normal leading-8 md:text-[72px]">
           Наші спеціалісти
         </SectionTitle>
 

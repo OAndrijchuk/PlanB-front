@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import '../assets/styles/globals.css';
 import { Button, ButtonScrollToUp } from '@/components';
+import { Header, HeaderFixed } from '@/modules';
 
 export const metadata: Metadata = {
   title: 'Студія PlanB',
@@ -15,6 +16,8 @@ export default function RootLayout({
   return (
     <html lang="ua">
       <body>
+        <Header />
+        <HeaderFixed />
         <main>
           {children}
           <ButtonScrollToUp />
