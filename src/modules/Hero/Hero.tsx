@@ -23,7 +23,7 @@ const Hero = () => {
         >
           Видалення не бажаного волосся ефективно та без болю
         </p>
-        <ButtonAppointment />
+        <ButtonAppointment type="button">Записатися</ButtonAppointment>
       </Container>
     </Section>
   );
