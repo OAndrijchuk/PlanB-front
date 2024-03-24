@@ -14,7 +14,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import '../styles.css';
 import SpriteSVG from '../img/SpriteSVG';
 import { twMerge } from 'tailwind-merge';
 
@@ -60,11 +59,7 @@ export default function App() {
         {slideData.map((slide, index) => (
           <SwiperSlide key={index}>
             <div>
-              <div>
-                <p className="mt-[64px] md:mt-[32px] md:text-sm">
-                  {slide.description}
-                </p>
-              </div>
+              <p>{slide.description}</p>
             </div>
           </SwiperSlide>
         ))}
