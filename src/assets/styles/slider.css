@@ -8,7 +8,7 @@
 
   @media screen and (min-width: 768px) {
     padding-top: 71px;
-    padding-bottom: 37px;
+    padding-bottom: 38px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -27,29 +27,33 @@
 
   background-color: #fff9f7 !important;
   background-image: url('../../../public/slider/bg-slide-img.png');
-  background-size: calc(100% - 80px);
+  background-size: calc(100% - 64px) 32px !important;
   background-repeat: no-repeat;
   background-position: center 24px;
 
   div {
     width: 100% !important;
+    height: fit-content !important;
+    padding: 24px 32px !important;
 
     p {
       margin-top: 64px;
+      font-size: 16px !important;
+      line-height: 1.5 !important;
     }
   }
 
   @media screen and (min-width: 768px) {
     width: 202px !important;
     height: 172px !important;
-    background-size: calc(100% - 64px);
+    background-size: calc(100% - 64px) 16px !important;
     background-position: center 30px;
 
     div {
       padding: 40px 32px !important;
 
       p {
-        margin-top: 32px;
+        margin-top: 32px !important;
         font-size: 14px !important;
         line-height: 1.42 !important;
       }
@@ -63,61 +67,45 @@
 }
 
 .swiper-slide-active {
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
+  background-position: center 24px !important;
+
   position: relative !important;
   z-index: 1000 !important;
+
+  transition: transform 0.1s ease-in-out;
+
+  @media screen and (min-width: 768px) {
+    transform: scaleX(1.7) scaleY(1.63) !important;
+    background-size: calc(100% - 64em) 32em;
+    bottom: 16.83px !important;
+  }
+
+  @media screen and (min-width: 1440px) {
+    background-position: center 40em;
+    transform: scaleX(1.73) scaleY(1.82) !important;
+    bottom: 0 !important;
+  }
 }
 
 .swiper-slide-active div {
   padding: 24px 32px !important;
 
-  p {
-    font-size: 16px !important;
-    line-height: 1.5 !important;
-  }
-
   @media screen and (min-width: 768px) {
-    max-width: 139% !important;
-    max-height: 135% !important;
-    width: 344px !important;
-    height: 280px !important;
-
-    border-radius: 12px !important;
-
-    color: #1d1c1c !important;
-    background-color: #fff9f7 !important;
-    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
-
-    background-image: url('../../../public/slider/bg-slide-img.png');
-    background-size: calc(100% - 60px);
-    background-repeat: no-repeat;
-    background-position: center 24px;
-
-    position: absolute !important;
-    top: 40% !important;
-    left: 50% !important;
-    z-index: 1000 !important;
-
-    transform: translate(-50%, -50%) !important;
-    transition: translate 0.3s !important;
-
     p {
-      margin-top: 64px !important;
+      margin-top: 32em;
+      font-size: 10px !important;
+      line-height: 1.5 !important;
     }
   }
 
   @media screen and (min-width: 1440px) {
-    max-width: 150% !important;
-    max-height: 153% !important;
-    width: 488px !important;
-    height: 312px !important;
-
-    background-position: center 40px;
-    background-size: calc(100% - 60px) 32px;
-
-    top: 50% !important;
+    padding: 40em 32em;
 
     p {
-      font-size: 18px !important;
+      margin-top: 64em;
+      font-size: 12px !important;
       line-height: 1.55 !important;
     }
   }
