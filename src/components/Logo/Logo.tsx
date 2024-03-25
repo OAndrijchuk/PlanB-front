@@ -24,7 +24,7 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
             gradientTransform="matrix(10.63494 -8.31374 2.28842 2.92735 24.603 26.196)"
           >
             <stop stopColor="#F9CFC3" />
-            <stop offset="1" stop-color="#FCF4F1" stopOpacity="0" />
+            <stop offset="1" stopColor="#FCF4F1" stopOpacity="0" />
           </radialGradient>
           <clipPath id="b">
             <path fill="#fff" fillOpacity="0" d="M0 0h40v32H0z" />
