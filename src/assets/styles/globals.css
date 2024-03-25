@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import './background';
+@import './slider.css';
 
 html {
   box-sizing: border-box;
